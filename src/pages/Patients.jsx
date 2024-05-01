@@ -4,17 +4,19 @@ import PatientsTable from "../components/PatientsTable";
 import AddPatientForm from "../components/AddPatientForm";
 import UpdatePatientForm from "../components/UpdatePatientForm";
 
-function Home(){
+function Patients(){
     return(
     <div className="container">
         
-        <h1>Home page</h1>
+        <h1>Patient page</h1>
         <PatientsTable />
-        <UpdatePatientForm />
-        <AddPatientForm />
+        <div className="update-and-add-container">
+            <UpdatePatientForm />
+            <AddPatientForm />
+        </div>
     </div>
     );
     
 }
 
-export default Home;
+export default Patients;

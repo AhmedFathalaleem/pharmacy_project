@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'; 
 import axios from 'axios';
+import "../components/styles.css"
 
 function MedsTable(){
 
@@ -29,35 +30,34 @@ function MedsTable(){
     };
 
     return (
-        <div>
-            <h2>Medications</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Category</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {Meds.map((med) =>(
-                        <tr key={med.id}>
-                            <td>{med.id}</td>
-                            <td>{med.name}</td>
-                            <td>{med.price}</td>
-                            <td>{med.category}</td>
-                            <td>
-                                <button onClick={()=>deleteMedicine(med.id)}>Delete</button>
-                            </td>
-                            
-                        </tr>
-                        
-                    ))}
-                </tbody>
-            </table>
-        </div>
+        <div class="medications-container">
+    <h2 class="medications-heading">Medications</h2>
+    <table class="medications-table">
+        <thead>
+            <tr>
+                <th class="med-id">ID</th>
+                <th class="med-name">Name</th>
+                <th class="med-price">Price</th>
+                <th class="med-category">Category</th>
+                <th class="med-action">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {Meds.map((med) =>(
+                <tr class="med-row" key={med.id}>
+                    <td class="med-id">{med.id}</td>
+                    <td class="med-name">{med.name}</td>
+                    <td class="med-price">{med.price}</td>
+                    <td class="med-category">{med.category}</td>
+                    <td class="med-action">
+                        <button class="delete-button" onClick={()=>deleteMedicine(med.id)}>Delete</button>
+                    </td>
+                </tr>
+            ))}
+        </tbody>
+    </table>
+</div>
+
     )
 
 

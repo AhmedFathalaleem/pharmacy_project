@@ -39,23 +39,25 @@ function UpdatePatientForm(){
 
 
       return (
-        <div>
-          <h2>Update patient</h2>
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label>ID:</label>
-              <input type="number" name="id" value={PatientData.id} onChange={handleChange} required />
-            </div>
-            <div>
-              <label>fName:</label>
-              <input type="text" name="fName" value={PatientData.fName} onChange={handleChange} required />
-            </div>
-            <div>
-              <label>lName:</label>
-              <input type="text" name="lName" value={PatientData.lName} onChange={handleChange} required />
-            </div>
-            <button type="submit">Update patient</button>
-          </form>
+        <div className="update-patient-container-wrap">
+          <div class="update-patient-container">
+              <h2 class="update-patient-heading">Update patient</h2>
+              <form class="update-patient-form" onSubmit={handleSubmit}>
+          <div class="form-group">
+              <label class="form-label">ID:</label>
+              <input class="form-input" type="number" name="id" value={PatientData.id} onChange={handleChange} required />
+          </div>
+          <div class="form-group">
+              <label class="form-label">First Name:</label>
+              <input class="form-input" type="text" name="fName" value={PatientData.fName} onChange={handleChange} required />
+          </div>
+          <div class="form-group">
+              <label class="form-label">Last Name:</label>
+              <input class="form-input" type="text" name="lName" value={PatientData.lName} onChange={handleChange} required />
+          </div>
+          <button class="submit-button" type="submit">Update patient</button>
+              </form>
+          </div>
         </div>
       );
 

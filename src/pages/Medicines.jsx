@@ -12,8 +12,11 @@ function Medicines(){
         
         <h1>Meds page</h1>
         <MedsTable />
-        <UpdateMedicineForm />
-        <AddMedicineForm />
+
+        <div className="update-and-add-container">
+            <UpdateMedicineForm />
+            <AddMedicineForm />
+        </div>
 
     </div>
     )

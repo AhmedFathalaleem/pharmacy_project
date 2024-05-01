@@ -28,28 +28,29 @@ const AddMedicineForm = () => {
   };
 
   return (
-    <div>
-      <h2>Add Medicine</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>ID:</label>
-          <input type="number" name="id" value={medicineData.id} onChange={handleChange} required />
+    <div class="add-medicine-container">
+    <h2 class="add-medicine-heading">Add medication</h2>
+    <form class="add-medicine-form" onSubmit={handleSubmit}>
+        <div class="form-group">
+            <label class="form-label">ID:</label>
+            <input class="form-input" type="number" name="id" value={medicineData.id} onChange={handleChange} required />
         </div>
-        <div>
-          <label>Name:</label>
-          <input type="text" name="name" value={medicineData.name} onChange={handleChange} required />
+        <div class="form-group">
+            <label class="form-label">Name:</label>
+            <input class="form-input" type="text" name="name" value={medicineData.name} onChange={handleChange} required />
         </div>
-        <div>
-          <label>Price:</label>
-          <input type="number" name="price" value={medicineData.price} onChange={handleChange} required />
+        <div class="form-group">
+            <label class="form-label">Price:</label>
+            <input class="form-input" type="number" name="price" value={medicineData.price} onChange={handleChange} required />
         </div>
-        <div>
-          <label>Category:</label>
-          <input type="text" name="category" value={medicineData.category} onChange={handleChange} required />
+        <div class="form-group">
+            <label class="form-label">Category:</label>
+            <input class="form-input" type="text" name="category" value={medicineData.category} onChange={handleChange} required />
         </div>
-        <button type="submit">Add Medicine</button>
-      </form>
-    </div>
+        <button class="submit-button" type="submit">Add Medicine</button>
+    </form>
+</div>
+
   );
 };
 

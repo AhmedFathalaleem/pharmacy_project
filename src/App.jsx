@@ -1,5 +1,5 @@
 import Admin from './pages/Admin';
-import Home from './pages/Home';
+import Patients from './pages/Patients';
 import Medicines from './pages/Medicines';
 import './App.css';
 import Navbar from './components/Navbar';
@@ -16,7 +16,7 @@ function App() {
       <Navbar />
       <div className="container">
       <Routes>
-        <Route path="/" element ={<Home />} />
+        <Route path="/" element ={<Patients />} />
         <Route path="/Admin" element={<Admin />} />
         <Route path='/Medicines' element={<Medicines />}/>
       </Routes>

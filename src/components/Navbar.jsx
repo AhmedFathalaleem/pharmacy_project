@@ -7,7 +7,7 @@ function Navbar(){
     return <nav className="nav">
         <Link to="/" className="site-title">Site Name</Link>
           <ul>
-            <CustomLink to="/">Home</CustomLink>
+            <CustomLink to="/">Patients</CustomLink>
             <CustomLink to="/Admin">Admin</CustomLink>
             <CustomLink to="/Medicines">Medicines</CustomLink>
             

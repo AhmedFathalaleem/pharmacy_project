@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'; 
 import axios from 'axios';
+import "../components/styles.css";
 
 function PatientsTable(){
 
@@ -29,33 +30,32 @@ function PatientsTable(){
 
 
     return (
-        <div>
-            <h2>Patients</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>fName</th>
-                        <th>lName</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {Patients.map((patient) =>(
-                        <tr key={patient.id}>
-                            <td>{patient.id}</td>
-                            <td>{patient.fName}</td>
-                            <td>{patient.lName}</td>
-                            <td>
-                                <button onClick={()=>deletePatient(patient.id)}>Delete</button>
-                            </td>
-                            
-                        </tr>
-                        
-                    ))}
-                </tbody>
-            </table>
-        </div>
+        <div class="patients-container">
+    <h2>Patients</h2>
+    <table class="patients-table">
+        <thead>
+            <tr>
+                <th class="patient-id">ID</th>
+                <th class="patient-fname">First Name</th>
+                <th class="patient-lname">Last Name</th>
+                <th class="patient-action">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {Patients.map((patient) =>(
+                <tr class="patient-row" key={patient.id}>
+                    <td class="patient-id">{patient.id}</td>
+                    <td class="patient-fname">{patient.fName}</td>
+                    <td class="patient-lname">{patient.lName}</td>
+                    <td class="patient-action">
+                        <button class="delete-button" onClick={()=>deletePatient(patient.id)}>Delete</button>
+                    </td>
+                </tr>
+            ))}
+        </tbody>
+    </table>
+</div>
+
     )
 
 
