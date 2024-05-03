@@ -30,27 +30,27 @@ function MedsTable(){
     };
 
     return (
-        <div class="medications-container">
-    <h2 class="medications-heading">Medications</h2>
-    <table class="medications-table">
+        <div className="medications-container">
+    <h2 className="medications-heading">Medications Control</h2>
+    <table className="medications-table">
         <thead>
             <tr>
-                <th class="med-id">ID</th>
-                <th class="med-name">Name</th>
-                <th class="med-price">Price</th>
-                <th class="med-category">Category</th>
-                <th class="med-action">Action</th>
+                <th className="med-id">ID</th>
+                <th className="med-name">Name</th>
+                <th className="med-price">Price</th>
+                <th className="med-category">Category</th>
+                <th className="med-action">Action</th>
             </tr>
         </thead>
         <tbody>
             {Meds.map((med) =>(
-                <tr class="med-row" key={med.id}>
-                    <td class="med-id">{med.id}</td>
-                    <td class="med-name">{med.name}</td>
-                    <td class="med-price">{med.price}</td>
-                    <td class="med-category">{med.category}</td>
-                    <td class="med-action">
-                        <button class="delete-button" onClick={()=>deleteMedicine(med.id)}>Delete</button>
+                <tr className="med-row" key={med.id}>
+                    <td className="med-id">{med.id}</td>
+                    <td className="med-name">{med.name}</td>
+                    <td className="med-price">{med.price}</td>
+                    <td className="med-category">{med.category}</td>
+                    <td className="med-action">
+                        <button className="delete-button" onClick={()=>deleteMedicine(med.id)}>Delete</button>
                     </td>
                 </tr>
             ))}

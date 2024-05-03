@@ -30,7 +30,7 @@ function CategoriesTable(){
 
     return (
         <div className="categories-container">
-            <h2>Categories</h2>
+            <h2>Categories Control</h2>
             <table className="categories-table">
                 <thead>
                     <tr>

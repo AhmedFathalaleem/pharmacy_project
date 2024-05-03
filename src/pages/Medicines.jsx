@@ -10,7 +10,7 @@ function Medicines(){
     return( 
     <div>
         
-        <h1>Meds page</h1>
+        
         <MedsTable />
 
         <div className="update-and-add-container">

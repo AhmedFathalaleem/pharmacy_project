@@ -28,26 +28,23 @@ const AddMedicineForm = () => {
   };
 
   return (
-    <div class="add-medicine-container">
-    <h2 class="add-medicine-heading">Add medication</h2>
-    <form class="add-medicine-form" onSubmit={handleSubmit}>
-        <div class="form-group">
-            <label class="form-label">ID:</label>
-            <input class="form-input" type="number" name="id" value={medicineData.id} onChange={handleChange} required />
+    <div className="add-medicine-container">
+    <h2 className="add-medicine-heading">Add medication</h2>
+    <form className="add-medicine-form" onSubmit={handleSubmit}>
+        
+        <div className="form-group">
+            <label className="form-label">Name:</label>
+            <input className="form-input" type="text" name="name" value={medicineData.name} onChange={handleChange} required />
         </div>
-        <div class="form-group">
-            <label class="form-label">Name:</label>
-            <input class="form-input" type="text" name="name" value={medicineData.name} onChange={handleChange} required />
+        <div className="form-group">
+            <label className="form-label">Price:</label>
+            <input className="form-input" type="number" name="price" value={medicineData.price} onChange={handleChange} required />
         </div>
-        <div class="form-group">
-            <label class="form-label">Price:</label>
-            <input class="form-input" type="number" name="price" value={medicineData.price} onChange={handleChange} required />
+        <div className="form-group">
+            <label className="form-label">Category:</label>
+            <input className="form-input" type="text" name="category" value={medicineData.category} onChange={handleChange} required />
         </div>
-        <div class="form-group">
-            <label class="form-label">Category:</label>
-            <input class="form-input" type="text" name="category" value={medicineData.category} onChange={handleChange} required />
-        </div>
-        <button class="submit-button" type="submit">Add Medicine</button>
+        <button className="submit-button" type="submit">Add Medicine</button>
     </form>
 </div>
 

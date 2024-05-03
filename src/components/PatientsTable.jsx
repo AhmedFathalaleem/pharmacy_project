@@ -30,25 +30,25 @@ function PatientsTable(){
 
 
     return (
-        <div class="patients-container">
-    <h2>Patients</h2>
-    <table class="patients-table">
+        <div className="patients-container">
+    <h2>Patients Control </h2>
+    <table className="patients-table">
         <thead>
             <tr>
-                <th class="patient-id">ID</th>
-                <th class="patient-fname">First Name</th>
-                <th class="patient-lname">Last Name</th>
-                <th class="patient-action">Action</th>
+                <th className="patient-id">ID</th>
+                <th className="patient-fname">First Name</th>
+                <th className="patient-lname">Last Name</th>
+                <th className="patient-action">Action</th>
             </tr>
         </thead>
         <tbody>
             {Patients.map((patient) =>(
-                <tr class="patient-row" key={patient.id}>
-                    <td class="patient-id">{patient.id}</td>
-                    <td class="patient-fname">{patient.fName}</td>
-                    <td class="patient-lname">{patient.lName}</td>
-                    <td class="patient-action">
-                        <button class="delete-button" onClick={()=>deletePatient(patient.id)}>Delete</button>
+                <tr className="patient-row" key={patient.id}>
+                    <td className="patient-id">{patient.id}</td>
+                    <td className="patient-fname">{patient.fName}</td>
+                    <td className="patient-lname">{patient.lName}</td>
+                    <td className="patient-action">
+                        <button className="delete-button" onClick={()=>deletePatient(patient.id)}>Delete</button>
                     </td>
                 </tr>
             ))}

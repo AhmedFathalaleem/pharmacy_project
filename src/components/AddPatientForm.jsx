@@ -29,22 +29,19 @@ const AddPatientForm = () => {
 
   return (
     <div className="add-patient-container-wrap">
-      <div class="add-patient-container">
-      <h2 class="add-patient-heading">Add Patient</h2>
-      <form class="add-patient-form" onSubmit={handleSubmit}>
-          <div class="form-group">
-              <label class="form-label">ID:</label>
-              <input class="form-input" type="number" name="id" value={PatientData.id} onChange={handleChange} required />
+      <div className="add-patient-container">
+      <h2 className="add-patient-heading">Add Patient</h2>
+      <form className="add-patient-form" onSubmit={handleSubmit}>
+          
+          <div className="form-group">
+              <label className="form-label">First Name:</label>
+              <input className="form-input" type="text" name="fName" value={PatientData.fName} onChange={handleChange} required />
           </div>
-          <div class="form-group">
-              <label class="form-label">First Name:</label>
-              <input class="form-input" type="text" name="fName" value={PatientData.fName} onChange={handleChange} required />
+          <div className="form-group">
+              <label className="form-label">Last Name:</label>
+              <input className="form-input" type="text" name="lName" value={PatientData.lName} onChange={handleChange} required />
           </div>
-          <div class="form-group">
-              <label class="form-label">Last Name:</label>
-              <input class="form-input" type="text" name="lName" value={PatientData.lName} onChange={handleChange} required />
-          </div>
-          <button class="submit-button" type="submit">Add patient</button>
+          <button className="submit-button" type="submit">Add patient</button>
       </form>
       </div>
     </div>

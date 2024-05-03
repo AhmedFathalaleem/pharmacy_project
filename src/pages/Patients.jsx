@@ -6,7 +6,7 @@ function Patients(){
     return(
     <div className="container">
         
-        <h1>Patient page</h1>
+        
         <PatientsTable />
         <div className="update-and-add-container">
             <UpdatePatientForm />

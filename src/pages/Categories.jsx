@@ -10,7 +10,7 @@ function Categories(){
     
     <div>
         
-        <h1>Categories page</h1>
+        
         <CategoriesTable />
         <div className="update-and-add-container">
             <UpdateCategoryForm />

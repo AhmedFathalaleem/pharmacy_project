@@ -40,22 +40,22 @@ function UpdatePatientForm(){
 
       return (
         <div className="update-patient-container-wrap">
-          <div class="update-patient-container">
-              <h2 class="update-patient-heading">Update patient</h2>
-              <form class="update-patient-form" onSubmit={handleSubmit}>
-          <div class="form-group">
-              <label class="form-label">ID:</label>
-              <input class="form-input" type="number" name="id" value={PatientData.id} onChange={handleChange} required />
+          <div className="update-patient-container">
+              <h2 className="update-patient-heading">Update patient</h2>~
+              <form className="update-patient-form" onSubmit={handleSubmit}>
+          <div className="form-group">
+              <label className="form-label">ID:</label>
+              <input className="form-input" type="number" name="id" value={PatientData.id} onChange={handleChange} required />
           </div>
-          <div class="form-group">
-              <label class="form-label">First Name:</label>
-              <input class="form-input" type="text" name="fName" value={PatientData.fName} onChange={handleChange} required />
+          <div className="form-group">
+              <label className="form-label">First Name:</label>
+              <input className="form-input" type="text" name="fName" value={PatientData.fName} onChange={handleChange} required />
           </div>
-          <div class="form-group">
-              <label class="form-label">Last Name:</label>
-              <input class="form-input" type="text" name="lName" value={PatientData.lName} onChange={handleChange} required />
+          <div className="form-group">
+              <label className="form-label">Last Name:</label>
+              <input className="form-input" type="text" name="lName" value={PatientData.lName} onChange={handleChange} required />
           </div>
-          <button class="submit-button" type="submit">Update patient</button>
+          <button className="submit-button" type="submit">Update patient</button>
               </form>
           </div>
         </div>
