@@ -31,7 +31,7 @@ function PatientsTable(){
 
     return (
         <div className="patients-container">
-    <h2>Patients Control </h2>
+            
     <table className="patients-table">
         <thead>
             <tr>

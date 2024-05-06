@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  frontend:
+    image: frontend-dev-image
+    build: 
+      dockerfile: dockerfile.dev
+    container_name: frontend-dev-container
+    volumes:
+      - ./frontend/src:/frontend/src
+      - node_modeules:/frontend/node_modeules/
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+volumes:
+  node_modeules
