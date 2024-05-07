@@ -12,7 +12,7 @@ function PatientsTable(){
 
     const getPatients = async () =>{
         try{
-            const response = await axios.get('http://localhost:6001/patient/GetPatients');
+            const response = await axios.get('http://localhost:17088/Patient');
             setPatient(response.data);
         }catch(error){
             console.error("Error fetching patients", error);
@@ -21,7 +21,7 @@ function PatientsTable(){
 
     const deletePatient = async (id) =>{
         try{
-            await axios.delete('http://localhost:6001/patient/DeletePatient/'+id);
+            await axios.delete('http://localhost:17088/Patient/'+id);
             getPatients();
         }catch (error){
             console.error('Error deleting patient', error);
@@ -37,7 +37,7 @@ function PatientsTable(){
             <tr>
                 <th className="patient-id">ID</th>
                 <th className="patient-fname">First Name</th>
-                <th className="patient-lname">Last Name</th>
+                <th className="patient-lname">User ID</th>
                 <th className="patient-action">Action</th>
             </tr>
         </thead>
@@ -45,8 +45,8 @@ function PatientsTable(){
             {Patients.map((patient) =>(
                 <tr className="patient-row" key={patient.id}>
                     <td className="patient-id">{patient.id}</td>
-                    <td className="patient-fname">{patient.fName}</td>
-                    <td className="patient-lname">{patient.lName}</td>
+                    <td className="patient-fname">{patient.name}</td>
+                    <td className="patient-lname">{patient.userId}</td>
                     <td className="patient-action">
                         <button className="delete-button" onClick={()=>deletePatient(patient.id)}>Delete</button>
                     </td>

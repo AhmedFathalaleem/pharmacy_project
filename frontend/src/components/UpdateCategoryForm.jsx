@@ -8,8 +8,7 @@ function UpdateCategoryForm(){
 
     const [CategoryData, setCategoryData] = useState({
         id:'',
-        fName:'',
-        lName:''
+        Name: ""
     });
 
     const handleChange = (e) => {
@@ -19,7 +18,7 @@ function UpdateCategoryForm(){
 
       const getCategory = async () =>{
         try{
-            const response = await axios.get('http://localhost:6001/category/GetCategories');
+            const response = await axios.get('http://localhost:17088/category');
             setCategoryData(response.data);
         }catch(error){
             console.error("Error fetching category", error);
@@ -27,10 +26,9 @@ function UpdateCategoryForm(){
     };
 
     
-      const handleSubmit = async (e) => {
-        e.preventDefault();
+      const handleSubmit = async (id) => {
         try {
-          await axios.put(`http://localhost:6001/category/UpdateCategory`, CategoryData);
+          await axios.put(`http://localhost:17088/category/${CategoryData.id}`, CategoryData);
           getCategory();
         } catch (error) {
           console.error('Error updating category:', error);
@@ -49,7 +47,7 @@ function UpdateCategoryForm(){
                 </div>
                 <div className="form-group">
                     <label className="form-label">Category name:</label>
-                    <input className="form-input" type="text" name="name" value={CategoryData.name} onChange={handleChange} required />
+                    <input className="form-input" type="text" name="Name" value={CategoryData.name} onChange={handleChange} required />
                 </div>
                 <button className="submit-button" type="submit">Update category</button>
             </form>

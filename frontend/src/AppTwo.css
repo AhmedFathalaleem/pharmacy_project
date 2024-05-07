@@ -1,0 +1,101 @@
+/* App.css */
+
+/* Container for both login and registration forms */
+.form-container,
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 45vh;
+}
+
+/* Form styling */
+.form,
+.login-form {
+  width: 300px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* Title styling */
+.form h2,
+.login-form h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+/* Input field styling */
+.form input,
+.login-form input,
+.form select,
+.login-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Button styling */
+.form button,
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.form button:hover,
+.login-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Error message styling */
+.error-message {
+  color: #ff0000;
+  font-size: large;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Success and error popup styling */
+.success-popup,
+.error-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+
+.success-popup p,
+.error-popup p {
+  margin-bottom: 10px;
+}
+
+.success-popup button,
+.error-popup button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.success-popup button:hover,
+.error-popup button:hover {
+  background-color: #0056b3;
+}

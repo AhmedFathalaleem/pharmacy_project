@@ -1,17 +1,15 @@
-import React, { Children } from "react";
-import { Link, UseMatch, useMatch, useResolvedPath } from "react-router-dom";
+import React from "react";
+import { Link, useMatch, useResolvedPath } from "react-router-dom";
 
 
-function Navbar(){
+function PatientNavbar(){
     
     return <nav className="nav">
-        <Link to="/" className="site-title">Pharmacy</Link>
+        <Link to="/Request" className="site-title">Pharmacy</Link>
           <ul>
-            <CustomLink to="/patient">Patients</CustomLink>
-            <CustomLink to="/Categories">Categories</CustomLink>
-            <CustomLink to="/Medicines">Medicines</CustomLink>
-            <CustomLink to="/MedRequestsPage">Meds requests</CustomLink>
+            <CustomLink to="/Request">Request medicine</CustomLink>
             <CustomLink to="/">Logout</CustomLink>
+            
             
             
             
@@ -33,4 +31,4 @@ function CustomLink({to, children, ...props}){
 }
 
 
-export default Navbar;
+export default PatientNavbar;

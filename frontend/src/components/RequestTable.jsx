@@ -4,7 +4,17 @@ import "../components/styles.css"
 
 function MedsTable(){
 
+
     const [Meds, setMedicine] = useState([]);
+
+    useEffect(function (){
+        getMedicine();
+    }, []);
+
+    const [RequestData, setRequestData] = useState({
+        MedicineId: '',
+        UserId: ''
+      });
 
     useEffect(function (){
         getMedicine();
@@ -19,13 +29,14 @@ function MedsTable(){
         }
     };
 
-    //function to delete a medicine
-    const deleteMedicine = async (id) =>{
+   
+    const requestMedicine = async (medicineId, categoryId) => {
         try{
-            await axios.delete('http://localhost:17088/medicines/'+id);
-            getMedicine();
-        }catch (error){
-            console.error('Error deleting medication', error);
+            const requestData = { MedicineId: medicineId, UserId: categoryId };
+            await axios.post('http://localhost:17088/Request', requestData);
+            setRequestData({ ...RequestData, MedicineId: '', CategoryID: '' });
+        } catch (error) {
+            console.error('Error requesting medication', error);
         }
     };
 
@@ -50,7 +61,7 @@ function MedsTable(){
                     <td className="med-price">{med.categoryID}</td>
                     <td className="med-category">{med.adminId}</td>
                     <td className="med-action">
-                        <button className="delete-button" onClick={()=>deleteMedicine(med.id)}>Delete</button>
+                        <button className="delete-button" onClick={()=>requestMedicine(med.id, med.categoryID)}>Request</button>
                     </td>
                 </tr>
             ))}

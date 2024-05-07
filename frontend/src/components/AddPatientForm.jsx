@@ -4,8 +4,8 @@ import axios from 'axios';
 const AddPatientForm = () => {
   const [PatientData, setPatientData] = useState({
     id: '',
-    fName: '',
-    lName: ''
+    Name: '',
+    UserId: ''
   });
 
   const handleChange = (e) => {
@@ -16,7 +16,7 @@ const AddPatientForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:6001/patient/AddPatient', PatientData);
+      const response = await axios.post('http://localhost:17088/Patient', PatientData);
       console.log('Patient added:', response.data);
       
       
@@ -35,11 +35,11 @@ const AddPatientForm = () => {
           
           <div className="form-group">
               <label className="form-label">First Name:</label>
-              <input className="form-input" type="text" name="fName" value={PatientData.fName} onChange={handleChange} required />
+              <input className="form-input" type="text" name="Name" value={PatientData.name} onChange={handleChange} required />
           </div>
           <div className="form-group">
-              <label className="form-label">Last Name:</label>
-              <input className="form-input" type="text" name="lName" value={PatientData.lName} onChange={handleChange} required />
+              <label className="form-label">User ID</label>
+              <input className="form-input" type="number" name="UserId" value={PatientData.userId} onChange={handleChange} required />
           </div>
           <button className="submit-button" type="submit">Add patient</button>
       </form>

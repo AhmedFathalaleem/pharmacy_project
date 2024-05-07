@@ -4,9 +4,9 @@ import axios from 'axios';
 const AddMedicineForm = () => {
   const [medicineData, setMedicineData] = useState({
     id: '',
-    name: '',
-    price: '',
-    category: ''
+    Name: '',
+    CategoryId: '',
+    AdminId: ''
   });
 
   const handleChange = (e) => {
@@ -17,7 +17,7 @@ const AddMedicineForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:6001/meds/AddMedicine', medicineData);
+      const response = await axios.post('http://localhost:17088/medicines', medicineData);
       console.log('Medicine added:', response.data);
       
       //RELOAD THE TABLE HERE
@@ -34,15 +34,15 @@ const AddMedicineForm = () => {
         
         <div className="form-group">
             <label className="form-label">Name:</label>
-            <input className="form-input" type="text" name="name" value={medicineData.name} onChange={handleChange} required />
+            <input className="form-input" type="text" name="Name" value={medicineData.name} onChange={handleChange} required />
         </div>
         <div className="form-group">
-            <label className="form-label">Price:</label>
-            <input className="form-input" type="number" name="price" value={medicineData.price} onChange={handleChange} required />
+            <label className="form-label">Category ID:</label>
+            <input className="form-input" type="number" name="CategoryId" value={medicineData.price} onChange={handleChange} required />
         </div>
         <div className="form-group">
-            <label className="form-label">Category:</label>
-            <input className="form-input" type="text" name="category" value={medicineData.category} onChange={handleChange} required />
+            <label className="form-label">Admin ID:</label>
+            <input className="form-input" type="number" name="AdminId" value={medicineData.category} onChange={handleChange} required />
         </div>
         <button className="submit-button" type="submit">Add Medicine</button>
     </form>

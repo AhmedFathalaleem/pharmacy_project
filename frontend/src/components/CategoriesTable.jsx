@@ -12,7 +12,7 @@ function CategoriesTable(){
 
     const getCategories = async () =>{
         try{
-            const response = await axios.get('http://localhost:6001/category/GetCategories');
+            const response = await axios.get('http://localhost:17088/category');
             setCategory(response.data);
         }catch(error){
             console.error("Error fetching categories", error);
@@ -21,7 +21,7 @@ function CategoriesTable(){
 
     const deleteCategory = async (id) =>{
         try{
-            await axios.delete('http://localhost:6001/category/DeleteCategory/'+id);
+            await axios.delete('http://localhost:17088/category/'+id);
             getCategories();
         }catch (error){
         console.error('Error deleting category', error);
@@ -43,7 +43,7 @@ function CategoriesTable(){
                     {Categories.map((category) =>(
                     <tr className="category-row" key={category.id}>
                         <td className="category-id">{category.id}</td>
-                        <td className="category-name">{category.categoryName}</td>
+                        <td className="category-name">{category.name}</td>
                         <td className="category-action">
                         <button className="delete-button" onClick={()=>deleteCategory(category.id)}>Delete</button>
                         </td>

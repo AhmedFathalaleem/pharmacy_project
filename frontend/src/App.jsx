@@ -5,30 +5,54 @@ import './App.css';
 import Navbar from './components/Navbar';
 import "./components/styles.css"
 import { Route, Routes } from "react-router-dom";
+import LoginAndRegister from './pages/LoginAndRegister';
+import RequestMed from './pages/RequestMed';
+import MedRequestsPage from './pages/MedRequestsPage';
+
 
 
 function App() {
-
-
-  
   return (
     <>
-      <Navbar />
-      <div className="container">
       <Routes>
-        <Route path="/" element ={<Patients />} />
-        <Route path="/Categories" element={<Categories />} />
-        <Route path='/Medicines' element={<Medicines />}/>
+        <Route path="/" element={<LoginAndRegister />} />
+        <Route path="/Request" element={<RequestMed />} />
+        <Route path="/Patient" element={
+            <>
+              <Navbar />
+              <Patients />
+            </>
+          }
+        />
+        <Route path="/Categories" element={
+            <>
+              <Navbar />
+              <Categories />
+            </>
+          }
+        />
+
+        <Route path="/MedRequestsPage" element={
+            <>
+              <Navbar />
+              <MedRequestsPage />
+            </>
+          }
+        />
+
+        <Route path="/Medicines" element={
+            <>
+              <Navbar />
+              <Medicines />
+            </>
+          }
+        />
       </Routes>
-      </div>
-      
     </>
-    
-    
-    
-    
   );
-  
 }
+
+
+
 
 export default App;

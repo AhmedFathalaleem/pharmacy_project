@@ -4,8 +4,7 @@ import axios from 'axios';
 const AddCategoryForm = () =>{
 
     const [CategoryData, setCategoryData] = useState({
-        id: '',
-        categoryName: ''
+        Name: ''
     });
 
     const handleChange = (e) => {
@@ -16,7 +15,7 @@ const AddCategoryForm = () =>{
       const handleSubmit = async (e) => {
         e.preventDefault();
         try{
-            const response = await axios.post('http://localhost:6001/category/AddCategory', CategoryData);
+            const response = await axios.post('http://localhost:17088/category', CategoryData);
             console.log('Category added', response.data);
             
             //RELOAD THE TABLE HERE
@@ -32,12 +31,8 @@ const AddCategoryForm = () =>{
                     <h2 className="add-category-heading">Add Category</h2>
                     <form className="add-category-form" onSubmit={handleSubmit}>
                         <div className="form-group">
-                            <label className="form-label">ID:</label>
-                            <input className="form-input" type="number" name="id" value={CategoryData.id} onChange={handleChange} required />
-                        </div>
-                        <div className="form-group">
                             <label className="form-label">Name:</label>
-                            <input className="form-input" type="text" name="categoryName" value={CategoryData.categoryName} onChange={handleChange} required />
+                            <input className="form-input" type="text" name="Name" value={CategoryData.Name} onChange={handleChange} required />
                         </div>
                         <button className="submit-button" type="submit">Add Category</button>
                     </form>
